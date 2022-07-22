@@ -1,0 +1,21 @@
+<dialogue>
+	<node
+		name = "Шамиль"
+		text = "Кто тебя прислал"
+	></node>
+	
+	<node
+		name = "Террорист"
+		text = "Почтальон"
+	></node>
+	
+	<node
+		name = "Шамиль"
+		text = "Не шути со мной, сука"
+	></node>
+	
+	<node
+		name = "Террорист"
+		text = "Встретимся в аду, ублюдок"
+	></node>
+</dialogue>
