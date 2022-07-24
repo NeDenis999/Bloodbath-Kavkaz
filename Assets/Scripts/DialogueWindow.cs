@@ -1,11 +1,14 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using Heroes;
+using Levels.ClothingStore;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using UnityEngine.Events;
 
-public class DialogueSystem : MonoBehaviour
+public class DialogueWindow : MonoBehaviour
 {
     public TextAsset asset;
 
@@ -18,7 +21,11 @@ public class DialogueSystem : MonoBehaviour
     public int[] char_ID;
     public Sprite[] char_Sprites;
 
-    [SerializeField] private UnityEvent _event;
+    [SerializeField] 
+    private Terrorist _terrorist;
+
+    [SerializeField] 
+    private UnityEvent _event;
 
     DialogueSettings dialogue;
 
@@ -34,6 +41,11 @@ public class DialogueSystem : MonoBehaviour
         Inputing();
     }
 
+    public void Show()
+    {
+        gameObject.SetActive(true);
+    }
+    
     private void Initialization()
     {
         _name.text = dialogue.nodes[i].Name;
@@ -58,6 +70,7 @@ public class DialogueSystem : MonoBehaviour
         {
             //i = dialogue.nodes.Length - 1;
             _event.Invoke();
+            _terrorist.Cast();
             gameObject.SetActive(false);
         }
     }

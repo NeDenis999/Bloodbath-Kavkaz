@@ -1,11 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
+using Heroes;
 using UnityEngine;
 
 public class PhysicsMovement : MonoBehaviour
 {
     [SerializeField] private Rigidbody2D _rigidbody;
-    [SerializeField] private surfaceSlider _surfaceSlider;
+    [SerializeField] private SurfaceSlider _surfaceSlider;
     [SerializeField] private float _speed;
     [SerializeField] private float _jumpDistance;
     [SerializeField] private float _gravityScale = 0.1f;
