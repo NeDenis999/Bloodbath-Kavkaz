@@ -43,7 +43,7 @@ namespace Levels.ClothingStore
 
         private IEnumerator BeforeExplosion()
         {
-            yield return new WaitForSeconds(0.5f);
+            yield return new WaitForSeconds(1.5f);
             Dead();
             _heroCutscene.StartDeadExplosion();
             _grenade.Explosion();

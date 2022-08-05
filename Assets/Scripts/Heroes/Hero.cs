@@ -5,17 +5,8 @@ namespace Heroes
     public class Hero : MonoBehaviour
     {
         [SerializeField] 
-        private KeyboardInput _keyboardInput;
+        private MonoBehaviour[] _monoBehaviours;
         
-        [SerializeField] 
-        private HeroAnimator _heroAnimator;
-
-        [SerializeField] 
-        private HeroMovement _heroMovement;
-
-        [SerializeField] 
-        private DirectionAim _directionAim;
-
         public void TimeDilation(float timeScale)
         {
             Time.timeScale = timeScale;
@@ -23,18 +14,14 @@ namespace Heroes
 
         public void Pause()
         {
-            _keyboardInput.enabled = false;
-            _heroAnimator.enabled = false;
-            _heroMovement.enabled = false;
-            _directionAim.enabled = false;
+            foreach (var monoBehaviour in _monoBehaviours) 
+                monoBehaviour.enabled = false;
         }
         
         public void UnPause()
         {
-            _keyboardInput.enabled = true;
-            _heroAnimator.enabled = true;
-            _heroMovement.enabled = true;
-            _directionAim.enabled = true;
+            foreach (var monoBehaviour in _monoBehaviours) 
+                monoBehaviour.enabled = true;
         }
     }
 }
